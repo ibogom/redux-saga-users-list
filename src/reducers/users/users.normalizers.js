@@ -1,13 +1,14 @@
 export const normalizeUserItem = user => {
-  const { id, name, avatar, age, ...rest } = user
+  const { id, email, first_name, last_name, avatar, ...rest } = user
 
   return {
-    id, name, avatar, age, ...rest
+    id, name: first_name, lastName: last_name, avatar, ...rest
   }
 }
 
-export const normalizeUsers = (users = []) => {
-  users.reduce((memo, user) => {
+export const normalizeUsers = (users = {}) => {
+  const { data } = users
+  return data.reduce((memo, user) => {
     const data = normalizeUserItem(user)
 
     const { id } = data

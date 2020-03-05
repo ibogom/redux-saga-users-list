@@ -4,7 +4,7 @@ import _get from 'lodash/get'
 
 import './user.css'
 
-const User = ({ loadUserDetails, match, ...props }) => {
+const User = ({ name, email, lastName, avatar, loadUserDetails, match, ...props }) => {
 
   const id = _get(match, 'params.id')
 
@@ -13,11 +13,22 @@ const User = ({ loadUserDetails, match, ...props }) => {
   }, [loadUserDetails, id])
 
   return (<div className="user">
-
+      <div className="left-block">
+        <img src={avatar} alt="user avatrt"/>
+      </div>
+    <div className="right-bloc">
+        <h3>{name}</h3>
+        <h5>{lastName}</h5>
+      <a href={`mailto:${email}`} className="email">{email}</a>
+    </div>
   </div>)
 }
 
 User.propTypes = {
+  name: PropTypes.string,
+  lastName: PropTypes.string,
+  avatar: PropTypes.string,
+  email: PropTypes.string,
   match: PropTypes.object,
   loadUserDetails: PropTypes.func,
   //Public API

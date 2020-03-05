@@ -24,7 +24,7 @@ const Item = ({ id, name, avatar, age }) => {
 }
 
 Item.propTypes = {
-  id: PropTypes.string,
+  id: PropTypes.number,
   name: PropTypes.string,
   avatar: PropTypes.string,
   age: PropTypes.number
