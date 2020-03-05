@@ -14,7 +14,7 @@ const User = ({ name, email, lastName, avatar, loadUserDetails, match, ...props 
 
   return (<div className="user">
       <div className="left-block">
-        <img src={avatar} alt="user avatrt"/>
+        <img src={avatar} alt="user avatrt" className="avatar" />
       </div>
     <div className="right-bloc">
         <h3>{name}</h3>
