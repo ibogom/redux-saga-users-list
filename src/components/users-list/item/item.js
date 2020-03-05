@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import './item.css'
 
-const Item = ({ id, name, avatar, age }) => {
+const Item = ({ id, name, lastName, avatar, email }) => {
   return (
     <li className="list-item-wrapper">
       <Link to={`/${id}`} className="list-item">
@@ -15,9 +15,12 @@ const Item = ({ id, name, avatar, age }) => {
         <p className="name">
           <span className="label">name:</span> {name}
         </p>
+        <p className="last-name">
+          <span className="label">last name:</span> {lastName}
+        </p>
         <span className="separator"> | </span>
-        <p className="age">
-          <span className="label">age:</span> {age}
+        <p className="email">
+          <span className="label">email:</span> {email}
         </p>
       </Link>
     </li>)
@@ -26,8 +29,9 @@ const Item = ({ id, name, avatar, age }) => {
 Item.propTypes = {
   id: PropTypes.number,
   name: PropTypes.string,
+  lastName: PropTypes.string,
   avatar: PropTypes.string,
-  age: PropTypes.number
+  email: PropTypes.string
 }
 
 Item.defaultProps = {

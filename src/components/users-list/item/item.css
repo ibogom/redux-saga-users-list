@@ -40,12 +40,13 @@
     margin-right: 12px;
 }
 
-.name {
+.name,
+.last-name {
     font-size: 18px;
     font-weight: 400;
 }
 
-.age {
+.email {
     font-size: 16px;
     color: #696969;
 }

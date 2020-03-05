@@ -2,7 +2,7 @@ export const normalizeUserItem = user => {
   const { id, email, first_name, last_name, avatar, ...rest } = user
 
   return {
-    id, name: first_name, lastName: last_name, avatar, ...rest
+    id, name: first_name, lastName: last_name, avatar, email, ...rest
   }
 }
 
